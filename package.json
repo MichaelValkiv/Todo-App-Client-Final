@@ -1,0 +1,21 @@
+{
+  "name": "todo_app_typescript",
+  "version": "1.0.0",
+  "description": "Simple Todo App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mv",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/angular": "^1.6.57",
+    "@types/angular-ui-router": "^1.1.40",
+    "@uirouter/angularjs": "^1.0.25",
+    "angular": "^1.7.9",
+    "angular-ts-decorators": "^3.7.8"
+  }
+}

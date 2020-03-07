@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/js/angular.js"></script>
+    <script src="lib/js/angular-ui-router.js"></script>
+    <script src="lib/js/angular-resource.js"></script>
+    <script src="lib/js/angular-route.js"></script>
+
+    <script src="todo.module.js"></script>
+    <script src="todo.router.js"></script>
+
+    <script src="services/item-list.module.js"></script>
+    <script src="services/item-list.service.js"></script>
+
+    <script src="pages/todo-list/todo-list.module.js"></script>
+    <script src="pages/todo-list/todo-list.component.js"></script>
+    <script src="pages/todo-detail/todo-detail.module.js"></script>
+    <script src="pages/todo-detail/todo-detail.component.js"></script>
+
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/customStyles.css">
+    <link rel="stylesheet" href="lib/css/all.css">
+</head>
+<body class="bg-dark">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <span class="navbar-brand">TODO List App</span>
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" href="#!/todo-list">Todo List</a>
+    </div>
+</nav>
+
+<div class="view-container">
+    <div ui-view class="view-frame"></div>
+</div>
+
+<script src="lib/js/jquery-3.4.1.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="lib/js/all.js"></script>
+</body>
+</html>

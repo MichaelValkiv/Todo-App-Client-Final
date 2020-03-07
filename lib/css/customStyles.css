@@ -1,0 +1,51 @@
+
+.todoTable td
+{
+    vertical-align: middle;
+}
+.inactiveTodo
+{
+    background-color: #808080;
+}
+.uTools
+{
+    text-align: right;
+}
+.detailsBtn
+{
+    color: #00aaff;
+}
+.todoCard
+{
+    border-radius: 0 !important;
+}
+.todoInput
+{}
+.addItemCard
+{
+    padding: 10px;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+.editBtn,
+.deleteBtn,
+.backBtn
+{
+    margin: 5px;
+}
+button:disabled
+{
+    cursor: not-allowed;
+}
+@media screen and (max-width: 800px)
+{
+    .desktopHeader,
+    .desktopTable
+    {
+        display: none !important;
+    }
+    .mobileContainer
+    {
+        display: block;
+    }
+}

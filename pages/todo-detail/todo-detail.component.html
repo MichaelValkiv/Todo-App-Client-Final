@@ -1,0 +1,83 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Please confirm this action</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Delete?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" ng-click="$ctrl.todoDelete($ctrl.selectedItem)" data-dismiss="modal" class="btn btn-danger">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="w3-row w3-margin-top">
+                    <form name="todoForm">
+                        <div class="w3-container w3-red">
+                            <h2>Edit TODO</h2>
+                        </div>
+                        <div class="form-group">
+                            <label>TODO Name</label>
+                            <input name="nameInput" ng-model="$ctrl.selectedItem.name" class="form-control"
+                                   placeholder="Name" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>TODO Description</label>
+                            <textarea name="descInput" ng-model="$ctrl.selectedItem.description" rows="5" class="form-control"
+                                      placeholder="Description" required></textarea>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" name="statusInput" ng-model="$ctrl.selectedItem.is_active"
+                                   class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Active TODO</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button ng-click="$ctrl.todoEdit($ctrl.selectedItem)" class="btn btn-secondary"
+                        ng-disabled="todoForm.descInput.$invalid || todoForm.nameInput.$invalid">Edit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card text-center text-white bg-dark todoCard">
+    <div class="card-header">
+        Todo:<br>{{$ctrl.oneItem.name}}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Description</h5>
+        <p class="card-text">{{$ctrl.oneItem.description}}</p>
+    </div>
+    <div class="card-footer text-muted">
+        <p>Created At: {{$ctrl.oneItem.createdAt | date:'yyyy/MM/dd HH:mm:ss'}}</p>
+        <p>Deadline: {{$ctrl.oneItem.deadline | date:'yyyy/MM/dd HH:mm:ss'}}</p>
+        <button type="button" ui-sref="todo-list" class="btn btn-primary backBtn"><i class="fa fa-arrow-left"></i> Back</button>
+        <button type="button" class="btn btn-light editBtn" data-toggle="modal" ng-click="$ctrl.selectItem($ctrl.oneItem);"
+                data-target="#exampleModal1"><i class="fa fa-pencil-alt"></i> Edit</button>
+        <button type="button" class="btn btn-danger deleteBtn" data-toggle="modal"
+                ng-click="$ctrl.selectItem($ctrl.oneItem);" data-target="#exampleModal"><i class="fa fa-trash"></i> Delete</button>
+    </div>
+</div>
