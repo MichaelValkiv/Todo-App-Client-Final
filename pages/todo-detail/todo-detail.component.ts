@@ -1,7 +1,7 @@
-import { Component, OnInit } from "angular-ts-decorators";
-import { ItemListService } from "../../services/item-list.service";
-import { IStateService } from "angular-ui-router";
-import { IStateParamsService } from "angular-ui-router";
+import { Component, OnInit } from 'angular-ts-decorators';
+import { ItemListService } from '../../services/item-list.service';
+import { IStateService } from 'angular-ui-router';
+import { IStateParamsService } from 'angular-ui-router';
 
 @Component({
     selector: 'todo-detail',
@@ -13,7 +13,7 @@ export class TodoDetailComponent implements OnInit{
     oneItem: any;
     selectedItem: any;
 
-    constructor( private TODO: ItemListService,
+    constructor( private itemListService: ItemListService,
                  private $state: IStateService,
                  private $stateParams: IStateParamsService ) {}
 
@@ -23,7 +23,7 @@ export class TodoDetailComponent implements OnInit{
 
     oneTodoGet() {
         let todoId = this.$stateParams.todoId;
-        this.TODO.getTodo(todoId).then(
+        this.itemListService.getTodo(todoId).then(
             data => {
                 this.oneItem = data;
             },
@@ -38,7 +38,7 @@ export class TodoDetailComponent implements OnInit{
     }
 
     todoEdit(todo) {
-        this.TODO.updateTodo(todo).then(
+        this.itemListService.updateTodo(todo).then(
             () => {
                 this.oneTodoGet();
             },
@@ -49,7 +49,7 @@ export class TodoDetailComponent implements OnInit{
     }
 
     todoDelete(todo) {
-        this.TODO.deleteTodo(todo).then(
+        this.itemListService.deleteTodo(todo).then(
             () => {
                 this.$state.go('todo-list');
             },

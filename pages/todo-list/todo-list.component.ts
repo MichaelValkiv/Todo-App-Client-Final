@@ -1,5 +1,5 @@
-import { Component, OnInit } from "angular-ts-decorators";
-import { ItemListService } from "../../services/item-list.service";
+import { Component, OnInit } from 'angular-ts-decorators';
+import { ItemListService } from '../../services/item-list.service';
 
 @Component({
     selector: 'todo-list',
@@ -11,14 +11,14 @@ export class TodoListComponent implements OnInit{
     todos: any;
     selectedItem: any;
 
-    constructor( private TODO: ItemListService ) {}
+    constructor( private itemListService: ItemListService ) {}
 
     ngOnInit() {
         this.todoListGet();
     }
 
     todoListGet() {
-        this.TODO.getTodos().then(
+        this.itemListService.getTodos().then(
             data => {
                 this.todos = data;
             },
@@ -30,7 +30,7 @@ export class TodoListComponent implements OnInit{
     todoAdd(todo) {
         todo.description = 'No description';
         todo.is_active = true;
-        this.TODO.addTodo(todo).then(
+        this.itemListService.addTodo(todo).then(
             () => {
                 this.todoListGet();
             },
@@ -45,7 +45,7 @@ export class TodoListComponent implements OnInit{
     }
 
     todoDelete(todo) {
-        this.TODO.deleteTodo(todo).then(
+        this.itemListService.deleteTodo(todo).then(
             () => {
                 this.todoListGet();
             },
