@@ -1,4 +1,4 @@
-import { Component, OnInit } from '../../../node_modules/angular-ts-decorators';
+import { Component, OnInit } from 'angular-ts-decorators';
 import { ItemListService } from '../../services/item-list.service';
 import { IStateService } from 'angular-ui-router';
 import { IStateParamsService } from 'angular-ui-router';

@@ -1,4 +1,4 @@
-import { NgModule, platformBrowserDynamic } from '../node_modules/angular-ts-decorators';
+import { NgModule, platformBrowserDynamic } from 'angular-ts-decorators';
 import { TodoRouting } from './todo.routing';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
 
@@ -21,4 +21,3 @@ import { ItemListService } from './services/item-list.service';
 export class TodoModule {
     
 }
-platformBrowserDynamic().bootstrapModule(TodoModule);
