@@ -1,10 +1,10 @@
-import { Component, OnInit } from 'angular-ts-decorators';
+import { Component, OnInit } from '../../../node_modules/angular-ts-decorators';
 import { ItemListService } from '../../services/item-list.service';
 
 @Component({
     selector: 'todo-list',
-    styles: [require('pages/todo-list/todo-list.component.css')],
-    template: require('pages/todo-list/todo-list.component.html'),
+    styles: [require('./todo-list.component.css')],
+    template: require('./todo-list.component.html'),
 })
 
 export class TodoListComponent implements OnInit{

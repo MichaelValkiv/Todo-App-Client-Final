@@ -1,4 +1,4 @@
-import { NgModule } from 'angular-ts-decorators';
+import { NgModule } from '../node_modules/angular-ts-decorators';
 import { StateProvider } from '@uirouter/angularjs';
 
 @NgModule({

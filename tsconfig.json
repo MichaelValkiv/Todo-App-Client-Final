@@ -1,8 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist",
+    "sourceMap": true,
     "moduleResolution": "node",
     "target": "es2015",
     "typeRoots": [
@@ -10,5 +10,7 @@
     ],
     "experimentalDecorators": true
   },
-  "files": ["todo.module.ts"]
+  "files": [
+    "src/todo.module.ts"
+  ]
 }

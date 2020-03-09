@@ -1,4 +1,4 @@
-import { Injectable } from 'angular-ts-decorators';
+import { Injectable } from '../../node_modules/angular-ts-decorators';
 
 @Injectable()
 export class ItemListService {
