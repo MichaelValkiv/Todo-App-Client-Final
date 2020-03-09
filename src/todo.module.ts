@@ -1,8 +1,8 @@
 import { NgModule, platformBrowserDynamic } from 'angular-ts-decorators';
 import { TodoRouting } from './todo.routing';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
-
 import { TodoDetailComponent } from './pages/todo-detail/todo-detail.component';
+import { TodoComponent } from './todo.component';
 import { ItemListService } from './services/item-list.service';
 
 @NgModule({
@@ -15,7 +15,8 @@ import { ItemListService } from './services/item-list.service';
     ],
     declarations: [
         TodoListComponent,
-        TodoDetailComponent
+        TodoDetailComponent,
+        TodoComponent
     ]
 })
 export class TodoModule {
