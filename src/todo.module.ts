@@ -6,6 +6,7 @@ import { TodoDetailComponent } from './pages/todo-detail/todo-detail.component';
 import { ItemListService } from './services/item-list.service';
 
 @NgModule({
+    id: 'TodoModule',
     imports: [
       TodoRouting
     ],
