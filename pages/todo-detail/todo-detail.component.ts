@@ -5,7 +5,8 @@ import { IStateParamsService } from 'angular-ui-router';
 
 @Component({
     selector: 'todo-detail',
-    templateUrl: 'pages/todo-list/todo-list.component.html',
+    styles: [require('pages/todo-detail/todo-detail.component.css')],
+    template: require('pages/todo-detail/todo-detail.component.html'),
 })
 
 export class TodoDetailComponent implements OnInit{

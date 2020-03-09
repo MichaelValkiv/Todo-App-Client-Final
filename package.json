@@ -14,8 +14,10 @@
   "dependencies": {
     "@types/angular": "^1.6.57",
     "@types/angular-ui-router": "^1.1.40",
+    "@types/node": "^13.9.0",
     "@uirouter/angularjs": "^1.0.25",
     "angular": "^1.7.9",
+    "angular-cli-tools": "^1.10.3",
     "angular-ts-decorators": "^3.7.8"
   }
 }
