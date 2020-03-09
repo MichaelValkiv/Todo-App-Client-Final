@@ -1,14 +1,13 @@
 import { NgModule } from 'angular-ts-decorators';
 import { StateProvider } from '@uirouter/angularjs';
-import { UrlRouterProvider } from "@uirouter/angularjs";
 
 @NgModule({
     id: 'TodoRouting'
 })
 
 export class TodoRouting {
-    static config($stateProvider: StateProvider, $urlRouterProvider: UrlRouterProvider) {
-        $urlRouterProvider.otherwise('/todo-list');
+    static config($stateProvider: StateProvider) {
+
 
         $stateProvider
             .state('todo-list', {
