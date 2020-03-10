@@ -1,41 +1,40 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
-
-<div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Form</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <div class="w3-row w3-margin-top">
-            <form name="todoForm">
-                <div class="w3-container w3-red">
-                    <h2>Edit TODO</h2>
-                </div>
-                <div class="form-group">
-                    <label>TODO Name</label>
-                    <input name="nameInput" ng-model="$ctrl.selectedItem.name" class="form-control"
-                           placeholder="Name" type="text" required>
-                </div>
-                <div class="form-group">
-                    <label>TODO Description</label>
-                    <textarea name="descInput" ng-model="$ctrl.selectedItem.description" rows="5" class="form-control"
-                              placeholder="Description" required></textarea>
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" name="statusInput" ng-model="$ctrl.selectedItem.is_active"
-                           class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Active TODO</label>
-                </div>
-            </form>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Form</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="w3-row w3-margin-top">
+                <form name="todoForm">
+                    <div class="w3-container w3-red">
+                        <h2>Edit TODO</h2>
+                    </div>
+                    <div class="form-group">
+                        <label>TODO Name</label>
+                        <input name="nameInput" ng-model="$ctrl.selectedItem.name" class="form-control"
+                               placeholder="Name" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>TODO Description</label>
+                        <textarea name="descInput" ng-model="$ctrl.selectedItem.description" rows="5" class="form-control"
+                                  placeholder="Description" required></textarea>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" name="statusInput" ng-model="$ctrl.selectedItem.is_active"
+                               class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Active TODO</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button ng-click="$ctrl.todoEdit($ctrl.selectedItem)" class="btn btn-secondary"
+                    ng-disabled="todoForm.descInput.$invalid || todoForm.nameInput.$invalid" data-dismiss="modal">Edit
+            </button>
         </div>
     </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button ng-click="$ctrl.todoEdit($ctrl.selectedItem)" class="btn btn-secondary"
-                ng-disabled="todoForm.descInput.$invalid || todoForm.nameInput.$invalid" data-dismiss="modal">Edit
-        </button>
-    </div>
-</div>
 </div>
