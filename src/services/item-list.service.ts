@@ -1,9 +1,11 @@
 import { Injectable } from 'angular-ts-decorators';
+import { IHttpService } from 'angular';
 
-@Injectable()
+@Injectable('itemListService')
 export class ItemListService {
 
-    constructor( private $http: angular.IHttpService) {
+    /*@ngInject*/
+    constructor( private $http: IHttpService) {
     }
 
     public getTodos() {

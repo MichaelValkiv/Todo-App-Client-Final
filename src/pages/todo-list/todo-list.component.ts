@@ -13,7 +13,6 @@ export class TodoListComponent implements OnInit{
     selectedItem: any;
 
     /*@ngInject*/
-
     constructor( private itemListService: ItemListService ) {}
 
     ngOnInit() {

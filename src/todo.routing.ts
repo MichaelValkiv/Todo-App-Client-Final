@@ -2,7 +2,13 @@ import { NgModule } from 'angular-ts-decorators';
 import { StateProvider } from '@uirouter/angularjs';
 
 @NgModule({
-    id: 'TodoRouting'
+    id: 'TodoRouting',
+    imports: [
+        'ui.router'
+    ],
+    providers: [
+        { provide: 'StateProvider', useClass: StateProvider }
+    ],
 })
 
 export class TodoRouting {
@@ -14,7 +20,7 @@ export class TodoRouting {
                 url: '/todo-list',
                 views: {
                     content: {
-                        component: 'TodoListComponent'
+                        component: 'todoList'
                     },
                 },
             })
@@ -22,7 +28,7 @@ export class TodoRouting {
                 url: '/todo-details/:todoId',
                 views: {
                     content: {
-                        component: 'TodoDetailComponent'
+                        component: 'todoDetail'
                     }
                 }
             })

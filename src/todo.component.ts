@@ -6,5 +6,9 @@ import { Component } from 'angular-ts-decorators';
 })
 
 export class TodoComponent {
-    
+
+    /*@ngInject*/
+    constructor() {
+    }
+
 }

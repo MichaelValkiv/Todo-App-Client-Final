@@ -29,7 +29,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -40,9 +40,6 @@ module.exports = {
                     },
                     {
                         loader: 'ts-loader',
-                        options: {
-                            transpileOnly: true,
-                        }
                     },
                 ]
             },

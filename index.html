@@ -16,10 +16,8 @@
         <a class="nav-item nav-link" ui-sref="todo-list">Todo List</a>
     </div>
 </nav>
+<ui-view name="content"></ui-view>
 
-<div class="view-container">
-    <div ui-view class="view-frame"></div>
-</div>
 <todo-component></todo-component>
 <script src="lib/js/angular.js"></script>
 <!--<script src="lib/js/angular-ui-router.js"></script>-->

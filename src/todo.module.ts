@@ -11,7 +11,8 @@ import { ItemListService } from './services/item-list.service';
       TodoRouting
     ],
     providers: [
-        { provide: 'ItemListService', useClass: ItemListService }
+        ItemListService
+        // { provide: 'ItemListService', useClass: ItemListService }
     ],
     declarations: [
         TodoListComponent,

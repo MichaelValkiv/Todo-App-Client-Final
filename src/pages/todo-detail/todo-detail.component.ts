@@ -15,7 +15,6 @@ export class TodoDetailComponent implements OnInit{
     selectedItem: any;
 
     /*@ngInject*/
-
     constructor( private itemListService: ItemListService,
                  private $state: IStateService,
                  private $stateParams: IStateParamsService ) {}
