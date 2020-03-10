@@ -1,6 +1,6 @@
 import { Component, OnInit } from "angular-ts-decorators";
 import { ItemListService } from "../../services/item-list.service";
-import {IStateParamsService, IStateService} from "angular-ui-router";
+import { IStateParamsService, IStateService } from "angular-ui-router";
 
 @Component({
     selector: 'todo-edit',
