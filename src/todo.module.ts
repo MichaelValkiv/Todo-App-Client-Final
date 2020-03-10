@@ -12,7 +12,6 @@ import { ItemListService } from './services/item-list.service';
     ],
     providers: [
         ItemListService
-        // { provide: 'ItemListService', useClass: ItemListService }
     ],
     declarations: [
         TodoListComponent,
