@@ -29,6 +29,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "@types/angular": "^1.6.57",
     "@types/angular-ui-router": "^1.1.40",
     "@types/node": "^13.9.0",

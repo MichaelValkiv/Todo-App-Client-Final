@@ -39,20 +39,10 @@ export class TodoDetailComponent implements OnInit{
         this.selectedItem = item;
     }
 
-    public todoEdit(todo) {
-        this.itemListService.updateTodo(todo).then(
-            () => {
-                this.oneTodoGet();
-            },
-            (err) => {
-                console.log(err);
-            }
-        )
-    }
-
     public todoDelete(todo) {
         this.itemListService.deleteTodo(todo).then(
             () => {
+                document.getElementById('exampleModal').remove();
                 this.$state.go('todo-list');
             },
             (err) => {

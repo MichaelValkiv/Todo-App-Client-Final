@@ -4,6 +4,7 @@ import { TodoListComponent } from './pages/todo-list/todo-list.component';
 import { TodoDetailComponent } from './pages/todo-detail/todo-detail.component';
 import { TodoComponent } from './todo.component';
 import { ItemListService } from './services/item-list.service';
+import { TodoEditComponent } from "./components/todo-edit/todo-edit.component";
 
 @NgModule({
     id: 'TodoModule',
@@ -16,7 +17,8 @@ import { ItemListService } from './services/item-list.service';
     declarations: [
         TodoListComponent,
         TodoDetailComponent,
-        TodoComponent
+        TodoComponent,
+        TodoEditComponent
     ]
 })
 export class TodoModule {
