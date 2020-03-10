@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -8,16 +9,42 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-                title: 'Output Management',
+            filename: 'index.html',
+            template: './index.html',
         }),
+        new CopyWebpackPlugin([
+            {
+                from: './lib',
+                to:'lib'
+            }
+        ]),
     ],
     devtool: 'inline-source-map',
+    devServer: {
+        contentBase: path.join(__dirname, 'dist/todo_app_client_final'),
+        hot: true,
+        compress: true,
+        port: 3030
+    },
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
                 exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'ng-annotate-loader',
+                        options: {
+                            ngAnnotate: 'ng-annotate-patched',
+                        },
+                    },
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                            transpileOnly: true,
+                        }
+                    },
+                ]
             },
             {
                 test: /\.html$/i,

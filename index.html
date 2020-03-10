@@ -1,20 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="todoApp">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="lib/js/angular.js"></script>
-    <script src="lib/js/angular-ui-router.js"></script>
-    <script src="lib/js/angular-resource.js"></script>
-    <script src="lib/js/angular-route.js"></script>
-
-    <script type="module" src="todo.module.js"></script>
-    <script type="module" src="todo.routing.js"></script>
-
-    <script type="module" src="src/services/item-list.service.js"></script>
-
-    <script type="module" src="src/pages/todo-list/todo-list.component.js"></script>
-    <script type="module" src="src/pages/todo-detail/todo-detail.component.js"></script>
 
     <link rel="stylesheet" href="lib/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/css/customStyles.css">
@@ -23,7 +11,7 @@
 <body class="bg-dark">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <span class="navbar-brand">TODO List App</span>
+    <span class="navbar-brand">TODO List App.</span>
     <div class="navbar-nav">
         <a class="nav-item nav-link" ui-sref="todo-list">Todo List</a>
     </div>
@@ -33,6 +21,10 @@
     <div ui-view class="view-frame"></div>
 </div>
 <todo-component></todo-component>
+<script src="lib/js/angular.js"></script>
+<!--<script src="lib/js/angular-ui-router.js"></script>-->
+<!--<script src="lib/js/angular-resource.js"></script>-->
+<!--<script src="lib/js/angular-route.js"></script>-->
 <script src="lib/js/jquery-3.4.1.min.js"></script>
 <script src="lib/js/bootstrap.min.js"></script>
 <script src="lib/js/all.js"></script>

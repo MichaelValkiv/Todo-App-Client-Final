@@ -1,7 +1,7 @@
 import { NgModule } from 'angular-ts-decorators';
 
 @NgModule({
-
+    id: 'TodoConfig',
 })
 
 export class TodoConfig {

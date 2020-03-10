@@ -14,6 +14,8 @@ export class TodoDetailComponent implements OnInit{
     oneItem: any;
     selectedItem: any;
 
+    /*@ngInject*/
+
     constructor( private itemListService: ItemListService,
                  private $state: IStateService,
                  private $stateParams: IStateParamsService ) {}
@@ -22,11 +24,11 @@ export class TodoDetailComponent implements OnInit{
         this.oneTodoGet();
     }
 
-    oneTodoGet() {
+    private oneTodoGet() {
         let todoId = this.$stateParams.todoId;
         this.itemListService.getTodo(todoId).then(
-            data => {
-                this.oneItem = data;
+            resp => {
+                this.oneItem = resp;
             },
             (err) => {
                 console.log(err);
@@ -34,11 +36,11 @@ export class TodoDetailComponent implements OnInit{
         );
     }
 
-    selectItem(item) {
+    public selectItem(item) {
         this.selectedItem = item;
     }
 
-    todoEdit(todo) {
+    public todoEdit(todo) {
         this.itemListService.updateTodo(todo).then(
             () => {
                 this.oneTodoGet();
@@ -49,7 +51,7 @@ export class TodoDetailComponent implements OnInit{
         )
     }
 
-    todoDelete(todo) {
+    public todoDelete(todo) {
         this.itemListService.deleteTodo(todo).then(
             () => {
                 this.$state.go('todo-list');
