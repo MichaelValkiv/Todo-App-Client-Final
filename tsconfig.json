@@ -4,12 +4,17 @@
     "outDir": "./dist",
     "sourceMap": true,
     "moduleResolution": "node",
-    "target": "es2015",
+    "emitDecoratorMetadata": true,
+    "target": "es5",
+    "module": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
     "experimentalDecorators": true
   },
+  "exclude": [
+    "node_modules"
+  ],
   "files": [
     "main.ts"
   ]

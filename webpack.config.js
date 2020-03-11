@@ -21,7 +21,7 @@ module.exports = {
     ],
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.join(__dirname, 'dist/todo_app_client_final'),
+        contentBase: path.join(__dirname, 'dist'),
         hot: true,
         compress: true,
         port: 3030
@@ -40,6 +40,9 @@ module.exports = {
                     },
                     {
                         loader: 'ts-loader',
+                        options: {
+                            transpileOnly: true,
+                        }
                     },
                 ]
             },
@@ -61,6 +64,6 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist/todo_app_client_final'),
+        path: path.resolve(__dirname, 'dist'),
     },
 };

@@ -1,7 +1,7 @@
 import { Component, OnInit } from 'angular-ts-decorators';
 import { ItemListService } from '../../services/item-list.service';
-import { IStateService } from 'angular-ui-router';
-import { IStateParamsService } from 'angular-ui-router';
+// import { IStateService } from 'angular-ui-router';
+// import { IStateParamsService } from 'angular-ui-router';
 
 @Component({
     selector: 'todo-detail',

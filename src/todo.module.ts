@@ -1,4 +1,4 @@
-import { NgModule, platformBrowserDynamic } from 'angular-ts-decorators';
+import { NgModule } from 'angular-ts-decorators';
 import { TodoRouting } from './todo.routing';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
 import { TodoDetailComponent } from './pages/todo-detail/todo-detail.component';
