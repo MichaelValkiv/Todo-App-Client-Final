@@ -1,6 +1,6 @@
-import { Component, OnInit } from "angular-ts-decorators";
-import { ItemListService } from "../../services/item-list.service";
-import { StateService } from "@uirouter/angularjs";
+import { Component, OnInit } from 'angular-ts-decorators';
+import { ItemListService } from '../../services/item-list.service';
+import { StateService } from '@uirouter/angularjs';
 
 @Component({
     selector: 'todo-edit',
@@ -17,11 +17,11 @@ export class TodoEditComponent implements OnInit{
                  private $state: StateService ) {
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.selectTodo();
     }
 
-    private selectTodo() {
+    private selectTodo(): void {
         let todoId = this.$state.params.todoId;
         this.itemListService.getTodo(todoId).then(
             resp => {
@@ -33,7 +33,7 @@ export class TodoEditComponent implements OnInit{
         );
     }
 
-    public todoEdit(todo) {
+    public todoEdit(todo): void {
         this.itemListService.updateTodo(todo).then(
             () => {
                 document.getElementById('exampleModal1').remove();

@@ -18,11 +18,11 @@ export class TodoDetailComponent implements OnInit{
     constructor( private itemListService: ItemListService,
                  private $state: StateService ) {}
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.oneTodoGet();
     }
 
-    private oneTodoGet() {
+    private oneTodoGet(): void {
         let todoId = this.$state.params.todoId;
         this.itemListService.getTodo(todoId).then(
             resp => {
@@ -34,11 +34,11 @@ export class TodoDetailComponent implements OnInit{
         );
     }
 
-    public selectItem(item) {
+    public selectItem(item): void {
         this.selectedItem = item;
     }
 
-    public todoDelete(todo) {
+    public todoDelete(todo): void {
         this.itemListService.deleteTodo(todo).then(
             () => {
                 document.getElementById('exampleModal').remove();

@@ -15,11 +15,11 @@ export class TodoListComponent implements OnInit{
     /*@ngInject*/
     constructor( private itemListService: ItemListService ) {}
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.todoListGet();
     }
 
-    private todoListGet() {
+    private todoListGet(): void {
         this.itemListService.getTodos().then(
             resp => {
                 this.todos = resp;
@@ -29,24 +29,11 @@ export class TodoListComponent implements OnInit{
             });
     }
 
-    public todoAdd(todo) {
-        todo.description = 'No description';
-        todo.is_active = true;
-        this.itemListService.addTodo(todo).then(
-            () => {
-                this.todoListGet();
-            },
-            (err) => {
-                console.log(err);
-            }
-        )
-    }
-
-    public selectItem(item) {
+    public selectItem(item): void {
         this.selectedItem = item;
     }
 
-    public todoDelete(todo) {
+    public todoDelete(todo): void {
         this.itemListService.deleteTodo(todo).then(
             () => {
                 this.todoListGet();
