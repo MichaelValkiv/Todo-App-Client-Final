@@ -3,7 +3,6 @@ import { ItemListService } from '../../services/item-list.service';
 import { StateService } from '@uirouter/angularjs';
 import { Todo } from '../../interfaces/todo.interface';
 
-
 @Component({
     selector: 'todo-detail',
     styles: [require('./todo-detail.component.css')],
