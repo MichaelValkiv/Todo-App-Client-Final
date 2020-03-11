@@ -1,7 +1,7 @@
 import { Component, OnInit } from 'angular-ts-decorators';
 import { ItemListService } from '../../services/item-list.service';
-// import { IStateService } from 'angular-ui-router';
-// import { IStateParamsService } from 'angular-ui-router';
+import { StateService } from "@uirouter/angularjs";
+
 
 @Component({
     selector: 'todo-detail',
@@ -16,15 +16,15 @@ export class TodoDetailComponent implements OnInit{
 
     /*@ngInject*/
     constructor( private itemListService: ItemListService,
-                 private $state: IStateService,
-                 private $stateParams: IStateParamsService ) {}
+                 private $state: StateService ) {}
 
     ngOnInit() {
         this.oneTodoGet();
     }
 
     private oneTodoGet() {
-        let todoId = this.$stateParams.todoId;
+        let todoId = this.$state.params.todoId;
+        console.log(todoId);
         this.itemListService.getTodo(todoId).then(
             resp => {
                 this.oneItem = resp;

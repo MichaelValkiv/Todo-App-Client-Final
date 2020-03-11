@@ -1,6 +1,6 @@
 import { Component, OnInit } from "angular-ts-decorators";
 import { ItemListService } from "../../services/item-list.service";
-// import { IStateParamsService, IStateService } from "angular-ui-router";
+import { StateService } from "@uirouter/angularjs";
 
 @Component({
     selector: 'todo-edit',
@@ -14,8 +14,7 @@ export class TodoEditComponent implements OnInit{
 
     /*@ngInject*/
     constructor( private itemListService: ItemListService,
-                 private $stateParams: IStateParamsService,
-                 private $state: IStateService ) {
+                 private $state: StateService ) {
     }
 
     ngOnInit() {
@@ -23,7 +22,9 @@ export class TodoEditComponent implements OnInit{
     }
 
     private selectTodo() {
-        let todoId = this.$stateParams.todoId;
+        let todoId = this.$state.params.todoId;
+        console.log(todoId);
+
         this.itemListService.getTodo(todoId).then(
             resp => {
                 this.selectedItem = resp;
@@ -45,5 +46,4 @@ export class TodoEditComponent implements OnInit{
             }
         )
     }
-
 }
