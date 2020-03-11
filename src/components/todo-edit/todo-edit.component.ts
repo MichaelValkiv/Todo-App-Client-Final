@@ -23,7 +23,7 @@ export class TodoEditComponent implements OnInit{
     }
 
     private selectTodo(): void {
-        let todoId = this.$state.params.todoId;
+        let todoId: number = +this.$state.params.todoId;
         this.itemListService.getTodo(todoId).then(
             resp => {
                 this.selectedItem = resp;

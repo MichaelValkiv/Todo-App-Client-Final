@@ -15,25 +15,25 @@ export class ItemListService {
         })
     }
 
-    public getTodo(todoId): IPromise<Todo[]> {
+    public getTodo(todoId: number): IPromise<Todo[]> {
         return this.$http.get<Todo[]>(`http://localhost:8081/api/todos/${todoId}`).then(function (resp) {
             return resp.data;
         })
     }
 
-    public addTodo(todo): IPromise<Todo[]> {
+    public addTodo(todo: Todo): IPromise<Todo[]> {
         return this.$http.post<Todo[]>('http://localhost:8081/api/todos/', todo).then(function (resp) {
             return resp.data;
         })
     }
 
-    public updateTodo(todo): IPromise<Todo[]> {
+    public updateTodo(todo: Todo): IPromise<Todo[]> {
         return this.$http.put<Todo[]>(`http://localhost:8081/api/todos/${todo.id}`, todo).then(function (resp) {
             return resp.data;
         })
     }
 
-    public deleteTodo(todo): IPromise<Todo[]> {
+    public deleteTodo(todo: Todo): IPromise<Todo[]> {
         return this.$http.delete<Todo[]>(`http://localhost:8081/api/todos/${todo.id}`).then(function (resp) {
             return resp.data;
         })
