@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: './main.ts',
     plugins: [
         new CleanWebpackPlugin(),

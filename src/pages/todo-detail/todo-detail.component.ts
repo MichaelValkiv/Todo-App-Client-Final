@@ -24,7 +24,6 @@ export class TodoDetailComponent implements OnInit{
 
     private oneTodoGet() {
         let todoId = this.$state.params.todoId;
-        console.log(todoId);
         this.itemListService.getTodo(todoId).then(
             resp => {
                 this.oneItem = resp;
