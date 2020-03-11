@@ -1,6 +1,7 @@
 import { Component, OnInit } from 'angular-ts-decorators';
 import { ItemListService } from '../../services/item-list.service';
 import { StateService } from '@uirouter/angularjs';
+import { Todo } from '../../interfaces/todo.interface';
 
 @Component({
     selector: 'todo-add',
@@ -18,7 +19,7 @@ export class TodoAddComponent implements OnInit{
     ngOnInit(): void {
     }
 
-    public todoAdd(todo): void {
+    public todoAdd(todo: Todo): void {
         todo.description = 'No description';
         todo.is_active = true;
         this.itemListService.addTodo(todo).then(

@@ -1,5 +1,6 @@
 import { Component, OnInit } from 'angular-ts-decorators';
 import { ItemListService } from '../../services/item-list.service';
+import { Todo } from '../../interfaces/todo.interface';
 
 @Component({
     selector: 'todo-list',
@@ -9,8 +10,8 @@ import { ItemListService } from '../../services/item-list.service';
 
 export class TodoListComponent implements OnInit{
 
-    todos: any;
-    selectedItem: any;
+    todos: Todo[] = [];
+    selectedItem: Todo;
 
     /*@ngInject*/
     constructor( private itemListService: ItemListService ) {}
@@ -29,11 +30,11 @@ export class TodoListComponent implements OnInit{
             });
     }
 
-    public selectItem(item): void {
+    public selectItem(item: Todo): void {
         this.selectedItem = item;
     }
 
-    public todoDelete(todo): void {
+    public todoDelete(todo: Todo): void {
         this.itemListService.deleteTodo(todo).then(
             () => {
                 this.todoListGet();
