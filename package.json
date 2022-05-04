@@ -34,7 +34,7 @@
     "@types/angular-ui-router": "^1.1.40",
     "@types/node": "^13.9.0",
     "@uirouter/angularjs": "^1.0.25",
-    "angular": "^1.7.9",
+    "angular": "^1.8.3",
     "angular-cli-tools": "^1.10.3",
     "angular-ts-decorators": "^3.7.8",
     "ng-annotate-patched": "^1.12.0"
